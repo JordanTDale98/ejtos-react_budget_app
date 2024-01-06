@@ -54,10 +54,21 @@ const AllocationForm = (props) => {
                     <div className="input-group-prepend" style={{ marginLeft: '2rem' }}>
                 <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
                   </div>
+
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
+
+                  <div className="custom-select" style={{ marginLeft: '2rem' }} color='green'>
+                    <select className="custom-select" id="inputCurrencySelect01" onChange={(event) => setName(event.target.value)}>
+                        <option defaultValue>Currency</option>
+                        <option value="$ Dollar" name="dollar"> $ Dollar</option>
+                        <option value="£ Pound" name="pound"> £ Pound</option>
+                        <option value="€ Euro" name="euro"> € Euro</option>
+                        <option value="╣ Rupees" name="rupees"> ╣ Rupees</option> 
+                    </select>
+                  </div>
 
                     <input
                         required='required'
