@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const AllocationForm = (props) => {
+const AllocationForm = () => {
     const { dispatch,remaining  } = useContext(AppContext);
 
     const [name, setName] = useState('');
@@ -59,16 +59,6 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
-
-                  <div className="custom-select" style={{ marginLeft: '2rem' }} color='green'>
-                    <select className="custom-select" id="inputCurrencySelect01" onChange={(event) => setName(event.target.value)}>
-                        <option defaultValue>Currency</option>
-                        <option value="$ Dollar" name="dollar"> $ Dollar</option>
-                        <option value="£ Pound" name="pound"> £ Pound</option>
-                        <option value="€ Euro" name="euro"> € Euro</option>
-                        <option value="╣ Rupees" name="rupees"> ╣ Rupees</option> 
-                    </select>
-                  </div>
 
                     <input
                         required='required'
