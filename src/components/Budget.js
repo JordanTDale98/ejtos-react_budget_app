@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 
 
 const Budget = () => {
-    const { budget, expenses } = useContext(AppContext);
+    const { budget, expenses, currency } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     const totalExpenses = expenses.reduce((total, item) => {
         return (total = total + item.cost);
@@ -11,7 +11,7 @@ const Budget = () => {
     const handleBudgetChange = (event) => {
         setNewBudget(event.target.value);
         if (newBudget > 20000){
-            alert("The Company's Budget cannot exceed $20,000, the company is not that big.");
+            alert("The Company's Budget cannot exceed ",{currency}, "20,000, the company is not that big.");
             setNewBudget(budget);
             return;
         }
