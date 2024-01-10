@@ -3,26 +3,45 @@ import { AppContext } from '../context/AppContext';
 
 const Currency = () => {
     const {currency, dispatch} = useContext(AppContext);
-    const [newCurrency] = useState(currency);
+    const [newCurrency, setNewCurrency] = useState(currency);
+
     const handleCurrencyChange = () => {
+/*        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: currency
+        });
+        */
         if (newCurrency === "$") {
             dispatch({
                 type: "CHG_CURRENCY",
-                payload: newCurrency
+                payload: currency
             });
         }
         if (newCurrency === "€") {
+            dispatch({
+                type: "CHG_CURRENCY",
+                payload: currency
+            });
         }
         if (newCurrency === "╣") {
+            dispatch({
+                type: "CHG_CURRENCY",
+                payload: currency
+            });
         }
         else {
+            dispatch({
+                type: "CHG_CURRENCY",
+                payload: currency
+            });
         }
+ 
     }
     
 
     return (
         <div className="custom-select" style={{ marginLeft: '2rem'}} >
-        <select className="custom-select" id="inputCurrencySelect01" value = {newCurrency} onChange={handleCurrencyChange}>
+        <select className="custom-select" id="inputCurrencySelect01" value = {currency} onChange={handleCurrencyChange}>
             <option defaultValue>Currency</option>
             <option value="$" name="dollar"> $ Dollar</option>
             <option value="£" name="pound"> £ Pound</option>
