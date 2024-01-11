@@ -41,8 +41,8 @@ const Currency = () => {
     
 
     return (
-        <div className="custom-select" style={{ marginLeft: '2rem'}} >
-        <select className="custom-select" id="inputCurrencySelect01" value={currency} onChange={handleCurrencyChange}>
+        <div className="custom-select" >
+        <select className="custom-select" id="inputCurrencySelect01" value={newCurrency} onChange={handleCurrencyChange}>
             <option defaultValue>Currency</option>
             <option value="$" name="dollar"> $ Dollar</option>
             <option value="£" name="pound"> £ Pound</option>
