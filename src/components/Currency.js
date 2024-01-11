@@ -5,7 +5,8 @@ const Currency = () => {
     const {currency, dispatch} = useContext(AppContext);
     const [newCurrency, setNewCurrency] = useState(currency);
 
-    const handleCurrencyChange = () => {
+    const handleCurrencyChange = (event) => {
+        setNewCurrency(event.target.value);
 /*        dispatch({
             type: 'CHG_CURRENCY',
             payload: currency
@@ -13,25 +14,25 @@ const Currency = () => {
         */
         if (newCurrency === "$") {
             dispatch({
-                type: "CHG_CURRENCY",
+                type: 'CHG_CURRENCY_DOLLAR',
                 payload: currency
             });
         }
         if (newCurrency === "€") {
             dispatch({
-                type: "CHG_CURRENCY",
+                type: 'CHG_CURRENCY_EURO',
                 payload: currency
             });
         }
         if (newCurrency === "╣") {
             dispatch({
-                type: "CHG_CURRENCY",
+                type: 'CHG_CURRENCY_RUPEE',
                 payload: currency
             });
         }
         else {
             dispatch({
-                type: "CHG_CURRENCY",
+                type: 'CHG_CURRENCY_POUND',
                 payload: currency
             });
         }
@@ -41,7 +42,7 @@ const Currency = () => {
 
     return (
         <div className="custom-select" style={{ marginLeft: '2rem'}} >
-        <select className="custom-select" id="inputCurrencySelect01" value = {currency} onChange={handleCurrencyChange}>
+        <select className="custom-select" id="inputCurrencySelect01" value={currency} onChange={handleCurrencyChange}>
             <option defaultValue>Currency</option>
             <option value="$" name="dollar"> $ Dollar</option>
             <option value="£" name="pound"> £ Pound</option>
